@@ -1,4 +1,4 @@
-import Pair from '../src/lib/pair';
+import Pair from '../src/lib/Pair';
 
 describe('Test pair type.', () => {
   const first = 'first';
