@@ -1,0 +1,32 @@
+{
+  "name": "poletay-js-data-types",
+  "version": "1.0.0",
+  "description": "mн data-types implementation on js",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "eslint": "eslint",
+    "flow": "flow",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Aleksey Smirnov",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-flowtype": "^3.2.1",
+    "eslint-plugin-import": "^2.14.0",
+    "flow-bin": "^0.91.0",
+    "jest": "^23.6.0"
+  }
+}
