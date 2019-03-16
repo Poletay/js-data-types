@@ -95,7 +95,7 @@ export const insertAtMiddle = (list: LinkedList, newElement: any, position: numb
   return makeLinkedList(...newArrayOfElements);
 };
 
-export const deleteElement = (list: LinkedList, index): LinkedList => {
+export const deleteElement = (list: LinkedList, index: number): LinkedList => {
   const listLength = length(list);
   if (listLength < 0 || listLength < index || index < 0) {
     return list;
