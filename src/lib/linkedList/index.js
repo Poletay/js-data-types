@@ -64,19 +64,21 @@ export const insertAtEnd = (list: LinkedList, newElement: any): LinkedList => {
   return newList;
 };
 
+const makeArrayOfNullElements = (amount: number): Array<null> => {
+  const iter = (counter: number = 0, acc: Array<null> = []) => {
+    if (counter < 1) {
+      return acc;
+    }
+    const newAcc = acc.concat([null]);
+    return iter(counter - 1, newAcc);
+  };
+  return iter(amount);
+};
+
 export const insertAtMiddle = (list: LinkedList, newElement: any, position: number): LinkedList => {
   const arrayOfElements: Array<any> = toArray(list);
   const listLength = length(list);
-  const makeArrayOfNullElements = (amount: number): Array<null> => {
-    const iter = (counter: number = 0, acc: Array<null> = []) => {
-      if (counter < 1) {
-        return acc;
-      }
-      const newAcc = acc.concat([null]);
-      return iter(counter - 1, newAcc);
-    };
-    return iter(amount);
-  };
+
   if (position < 0) {
     const amountNullElements: number = Math.abs(position) - 1;
     const arrayOfNulls: Array<null> = makeArrayOfNullElements(amountNullElements);
