@@ -1,18 +1,33 @@
-import Pair from '../src/lib/Pair';
+import {
+  makePair,
+  getFirstPairElement,
+  getSecondPairElement,
+  isPair,
+  pairToString,
+} from '../src/lib/pair';
 
-describe('Test pair type.', () => {
+describe('Pair', () => {
   const first = 'first';
   const second = 'second';
-  const newPair = new Pair(first, second);
-  it('Should create the Pair data type', () => {
-    expect(newPair instanceof Pair).toBeTruthy();
+  const pair = makePair(first, second);
+  const anotherPair = makePair(second, pair);
+
+  it('#isPair', () => {
+    expect(isPair(pair)).toBeTruthy();
+    expect(isPair(5)).toBeFalsy();
+    expect(isPair({})).toBeFalsy();
   });
 
-  it('Should return first element by "car" method.', () => {
-    expect(newPair.car()).toBe(first);
+  it('#getFirstPairElement', () => {
+    expect(getFirstPairElement(pair)).toBe(first);
   });
 
-  it('Should return second element by "cdr" method.', () => {
-    expect(newPair.cdr()).toBe(second);
+  it('#getSecondPairElement', () => {
+    expect(getSecondPairElement(pair)).toBe(second);
+  });
+
+  it('#pairToString', () => {
+    expect(pairToString(pair)).toBe(`[${first}], [${second}]`);
+    expect(pairToString(anotherPair)).toBe(`[${second}], [[${first}], [${second}]]`);
   });
 });

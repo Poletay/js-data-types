@@ -1,4 +1,4 @@
-import Pair from './lib/Pair';
+import * as Pair from './lib/pair';
 
 export default {
   Pair,
